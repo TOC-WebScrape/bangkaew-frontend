@@ -1,3 +1,4 @@
+//XXX: Korn, exchange card
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 
 interface ExchangeCardProps {
