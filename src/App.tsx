@@ -6,7 +6,7 @@ import { EXCHANGE_CARD } from "./MockData";
 function App() {
   return (
     <>
-      <div className='w-4/5'>
+      <div>
         <ExchangeCard {...EXCHANGE_CARD} />
       </div>
     </>

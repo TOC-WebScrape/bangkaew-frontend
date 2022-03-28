@@ -1,3 +1,5 @@
+import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+
 interface ExchangeCardProps {
   imageUrl: string;
   currentPrice: string | number;
@@ -16,18 +18,14 @@ const ExchangeCard: React.FC<ExchangeCardProps> = ({
   volume,
 }: ExchangeCardProps) => {
   return (
-    <div className='flex flex-row bg-green-200 rounded-xl justify-center items-center'>
-      <img src={imageUrl} alt='EXCHANGE' className='rounded-full h-16 ' />
+    <div>
+      <img src={imageUrl} alt='EXCHANGE' />
       <div>{currentPrice}$</div>
-      <div className='flex flex-col'>
-        {percentChange >= 0 ? (
-          <div className='order-first'>UP ICON</div>
-        ) : (
-          <div className='order-last'>DOWN ICON</div>
-        )}
+      <div>
+        {percentChange >= 0 ? <div>UP ICON</div> : <div>DOWN ICON</div>}
         {percentChange}
       </div>
-      <div className='flex flex-col justify-center items-center'>
+      <div>
         {highestPrice}
         <div>----------</div>
         {lowestPrice}
