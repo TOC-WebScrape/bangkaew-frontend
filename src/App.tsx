@@ -2,13 +2,13 @@ import "./App.css";
 import { ExchangeCard } from "./components";
 
 import { EXCHANGE_CARD } from "./MockData";
+import { Navbar } from "./components";
 
 function App() {
   return (
     <>
-      <div>
-        <ExchangeCard {...EXCHANGE_CARD} />
-      </div>
+      <Navbar/>
+      <ExchangeCard {...EXCHANGE_CARD} />
     </>
   );
 }
