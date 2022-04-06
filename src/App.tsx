@@ -1,15 +1,27 @@
 import "./App.css";
-import { ExchangeCard, SearchBox } from "./components";
+import { ExchangeCard, LandingCard, SearchBox } from "./components";
 
-import { EXCHANGE_CARD } from "./MockData";
+import { EXCHANGE_CARD, LANDING_CARD } from "./MockData";
 import { Navbar } from "./components";
 
 function App() {
   return (
     <>
-      <Navbar/>
-      <SearchBox/>
-      <ExchangeCard {...EXCHANGE_CARD} />
+      <Navbar />
+      <SearchBox />
+      <div
+        style={{
+          paddingTop: "10px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gap: "20px",
+        }}
+      >
+        <LandingCard {...LANDING_CARD} />
+        <LandingCard {...LANDING_CARD} />
+        <LandingCard {...LANDING_CARD} />
+      </div>
     </>
   );
 }
