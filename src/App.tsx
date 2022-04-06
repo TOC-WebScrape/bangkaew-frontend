@@ -1,27 +1,25 @@
 import "./App.css";
-import { ExchangeCard, LandingCard, SearchBox } from "./components";
-
-import { EXCHANGE_CARD, LANDING_CARD } from "./MockData";
+import { LandingPage, SearchPage, AboutPage } from "./components";
 import { Navbar } from "./components";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Navbar />
-      <SearchBox />
-      <div
-        style={{
-          paddingTop: "10px",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gap: "20px",
-        }}
-      >
-        <LandingCard {...LANDING_CARD} />
-        <LandingCard {...LANDING_CARD} />
-        <LandingCard {...LANDING_CARD} />
-      </div>
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/search' element={<SearchPage />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route
+          path='*'
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
     </>
   );
 }
