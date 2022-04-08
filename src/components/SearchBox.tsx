@@ -18,10 +18,10 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
     'Binance Coin (BNB)',
   ];
   const [searchInput, setSearchInput] = React.useState('');
-  const handleSearchInputChange = (e) => {
+  const handleSearchInputChange = (e: any) => {
     setSearchInput(e.target.value);
   };
-  const keyPress = (e) => {
+  const keyPress = (e: any) => {
     if (e.key === 'Enter') {
       setSearchInput(e.target.value);
       console.log(searchInput);
@@ -42,7 +42,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
         id='currency-search'
         freeSolo
         options={suggestionCurrency}
-        onChange={(event, value) => setSearchInput(value)}
+        onChange={(event, value) => setSearchInput(String(value))}
         renderInput={(params) => (
           <TextField
             {...params}

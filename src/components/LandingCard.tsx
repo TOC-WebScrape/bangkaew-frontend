@@ -1,10 +1,11 @@
 //XXX: Korn, Landing Page Card
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { Paper } from '@mui/material';
 
 interface LandingCardProps {
   imageUrl: string;
@@ -19,7 +20,7 @@ const LandingCard: React.FC<LandingCardProps> = ({
 }: LandingCardProps) => {
   //taken directly from the documentation: https://mui.com/components/cards/
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, borderStyle: 'solid', border: 1, boxShadow: 2 }}>
       <CardMedia
         component='img'
         height='140'
