@@ -3,7 +3,9 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Box } from '@mui/system';
-import { Typography } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import { SvgIcon, Typography, Button, Paper } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 interface SearchBoxProps {}
 const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
@@ -23,10 +25,14 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
   };
   const keyPress = (e: any) => {
     if (e.key === 'Enter') {
-      setSearchInput(e.target.value);
+      //setSearchInput(e.target.value);
       console.log(searchInput);
     }
   };
+  const handleSearchButtonClick = (e:any) => {
+    console.log(searchInput)
+  }
+
   return (
     <Box
       sx={{
@@ -37,22 +43,41 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
       }}
     >
       <Typography sx={{ py: 2 }}>Cryptocurrency Symbol</Typography>
-      <Autocomplete
-        sx={{ width: 900 }}
-        id='currency-search'
-        freeSolo
-        options={suggestionCurrency}
-        onChange={(event, value) => setSearchInput(String(value))}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label='Search Cryptocurrency'
-            value={searchInput}
-            onChange={handleSearchInputChange}
-            onKeyDown={keyPress}
-          />
-        )}
-      />
+      <Box
+        sx={{
+          display: 'flex',
+          alignContent: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Autocomplete
+          sx={{ width: 900, display: 'inline-block' }}
+          id='currency-search'
+          freeSolo
+          options={suggestionCurrency}
+          onInputChange={(event, value) => {
+            setSearchInput(String(value));
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label='Search Cryptocurrency'
+              value={searchInput}
+              onKeyDown={keyPress}
+            />
+          )}
+        />
+        <IconButton
+          onClick={handleSearchButtonClick}
+          sx={{
+            borderStyle: 'solid',
+            borderBlockColor: 'black',
+            display: 'inline-block',
+          }}
+        >
+          <SvgIcon component={SearchIcon} sx={{ width: 50, height: 40 }} />
+        </IconButton>
+      </Box>
     </Box>
   );
 };

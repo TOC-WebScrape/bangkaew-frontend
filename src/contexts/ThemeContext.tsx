@@ -13,7 +13,7 @@ export const ThemeProvider: FC = ({ children }) => {
   const colorMode = useMemo(() => ({
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-        console.log("toggle Color Mode to"+{mode})
+        console.log("toggle Color Mode to"+ {mode})
       },
     }),
     [],
