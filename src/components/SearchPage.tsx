@@ -12,6 +12,7 @@ const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
   return (
     <div>
       <SearchBox />
+      <WebSelectBar/>
       <ExchangeCard
         currentPrice={data.currentPrice}
         highestPrice={data.highestPrice}
@@ -20,7 +21,6 @@ const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
         percentChange={data.percentChange}
         volume={data.volume}
       />
-      <WebSelectBar/>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Typography,
   Paper,
@@ -8,6 +8,8 @@ import {
   FormGroup,
   FormControlLabel,
 } from "@mui/material";
+import { ExchangeContext } from "../contexts/ExchangeContext";
+import { ExchangeContextType } from "../@types/exchange";
 
 interface IWebSelectBar {}
 
@@ -23,6 +25,8 @@ const exchangeList = [
 ];
 
 const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
+  const { exchanges } = useContext(ExchangeContext) as ExchangeContextType;
+
   const websites = [
     { website: "Explore Price", route: "/search" },
     { website: "About", route: "/about" },
@@ -48,11 +52,11 @@ const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
           width: 0.7,
         }}
       >
-        {exchangeList.map((data) => {
+        {exchanges.map((data) => {
           return (
             <FormControlLabel
               control={<Checkbox />}
-              label={data}
+              label={data.name}
               sx={{
                 flexGrow: 1,
                 maxWidth: 0.21,
