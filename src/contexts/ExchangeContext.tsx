@@ -1,3 +1,12 @@
+/** 
+ * Provide Context of selected exchange for fetching price
+ * 
+ * @param exchanges - List of available exchange { name, isSelect }
+ * @param toggleSelect - pass name of exchange for toggle select state each exchange
+ * 
+ * @author SnapM (Jame)
+ */
+
 import React, { createContext, useState } from "react";
 import { ExchangeContextType, IExchange } from "../@types/exchange";
 
@@ -45,6 +54,7 @@ const ExchangeProvider: React.FC<React.ReactNode> = ({ children }) => {
         exchanges.filter((exchange: IExchange) => {
             if (exchange.name === name) {
                 exchange.isSelect = !exchange.isSelect;
+                // Why Error!! I can't update exchange to exchanges
                 // setExchanges([...exchange])
             }
         });
