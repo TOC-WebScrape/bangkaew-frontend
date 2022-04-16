@@ -32,10 +32,15 @@ const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
     { website: "About", route: "/about" },
     { website: "Nav3", route: "/" },
   ];
+
+  const handleBoxChecked = () => {
+
+  }
+
   return (
     <Paper
       sx={{
-        borderStyle: "solid",
+        // borderStyle: "solid",
         m: 2,
         display: "flex",
         flexDirection: "column",
@@ -47,9 +52,10 @@ const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          borderStyle: "solid",
+          // borderStyle: "solid",
           justifyContent: "center",
           width: 0.7,
+          flexDirection:"row",
         }}
       >
         {exchanges.map((data) => {

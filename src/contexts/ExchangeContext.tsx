@@ -13,38 +13,39 @@ import { ExchangeContextType, IExchange } from "../@types/exchange";
 export const ExchangeContext = createContext<ExchangeContextType | null>(null);
 
 const InitExchange: IExchange[] = [
-    {
-        name: "Binance",
-        isSelect: true,
-    },
-    {
-        name: "Bitfinex",
-        isSelect: true,
-    },
-    {
-        name: "Coinbase",
-        isSelect: true,
-    },
-    {
-        name: "Coinsbit",
-        isSelect: true,
-    },
-    {
-        name: "eToroX",
-        isSelect: true,
-    },
-    {
-        name: "FTX",
-        isSelect: true,
-    },
-    {
-        name: "Gateio",
-        isSelect: true,
-    },
-    {
-        name: "Kucoin",
-        isSelect: true,
-    },
+  {
+    name: 'Binance',
+    isSelect: true,
+  },
+  {
+    name: 'Bitfinex',
+    isSelect: true,
+  },
+  {
+    name: 'Coinbase',
+    isSelect: true,
+  },
+  {
+    name: 'Coinsbit',
+    isSelect: true,
+  },
+  {
+    name: 'eToroX',
+    isSelect: true,
+  },
+  {
+    name: 'FTX',
+    isSelect: true,
+  },
+  {
+    name: 'Gateio',
+    isSelect: true,
+  },
+  {
+    name: 'Kucoin',
+    isSelect: true,
+  },
+
 ];
 
 const ExchangeProvider: React.FC<React.ReactNode> = ({ children }) => {
