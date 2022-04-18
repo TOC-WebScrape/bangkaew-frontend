@@ -12,29 +12,24 @@ interface AboutPageProps {}
 const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
   return (
     <body>
-      <div className='mainBox'>
-        <Avatar
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "relative",
-          }}
-            sx={{mb: 5, height: 150, width: 150 }}
-            src='https://avatars.githubusercontent.com/u/63555111?v=4'
-        ></Avatar>
-        <text
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            textAlign: "center",
-            fontFamily: "cursive",
-            fontSize: "30px",
-            color: "white",
-          }}
-        >
-          Bangkaew <br /> We are providing crytocurrency exchange comparison across many website on market.
-        </text>
+      <div className="headBox">
+        <div className='mainBox'></div>
+        <div className='sideBox'>
+          <Avatar
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+            }}
+              sx={{mb: 5, height: 150, width: 150 }}
+              src='https://avatars.githubusercontent.com/u/63555111?v=4'
+          ></Avatar>
+          <div className='content'>
+            <h6>BANGKAEW</h6>
+            <p>We are providing cryptocurrency exchange <br/> comparison across many website on market.</p>
+          </div>
+        </div>
       </div>
 
       {/* animate boxes */}
@@ -60,9 +55,9 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
               <img src={KORN_PROFILE} alt="profile-sample4" className="profile" />
-              <h2>Apextone<span>Engineer</span></h2>
+              <h2>Apextone<span>Engineer | Front-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/ApexTone" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
@@ -73,9 +68,9 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
               <img src={PHOOMw_PROFILE} alt="profile-sample4" className="profile" />
-              <h2>PhoomBeer<span>Engineer</span></h2>
+              <h2>PhoomBeer<span>Engineer | Back-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/GoldF15h" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
@@ -86,9 +81,9 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
               <img src="https://avatars.githubusercontent.com/u/63555111?v=4://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample4.jpg" alt="profile-sample4" className="profile" />
-              <h2>BeanBean<span>Engineer</span></h2>
+              <h2>BeanBean<span>Engineer | Back-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/teethat-lsk" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
@@ -98,10 +93,10 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
           <figure className="cardpro">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
-              <img src={PHOOMpat_PROFILE} alt="profile-sample4" className="profile" />
-              <h2>PhoomPat<span>Engineer</span></h2>
+              <img src="https://avatars.githubusercontent.com/u/50296761?v=4" alt="profile-sample4" className="profile" />
+              <h2>PhoomPat<span>Engineer | Back-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/Poomipat-Ch" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
@@ -115,9 +110,9 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
               <img src={JAME_PROFILE} alt="profile-sample4" className="profile" />
-              <h2>iJames<span>Engineer</span></h2>
+              <h2>iJames<span>Engineer | Front-end | Back-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/j4m3ee" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
@@ -128,9 +123,9 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
               <img src={TREE_PROFILE} alt="profile-sample4" className="profile" />
-              <h2>Treepangkorn<span>Engineer</span></h2>
+              <h2>Treepangkorn<span>Engineer | Front-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/T-Pakorn" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
@@ -140,10 +135,10 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
           <figure className="cardpro">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
-              <img src={BOSS_PROFILE} alt="profile-sample4" className="profile" />
-              <h2>Mr.Boss<span>Engineer</span></h2>
+              <img src="https://avatars.githubusercontent.com/u/63220854?v=4" alt="profile-sample4" className="profile" />
+              <h2>Mr.Boss<span>Engineer | Front-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/BXSS101" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
@@ -154,9 +149,9 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" />
             <figcaption>
               <img src={PHUKAO_PROFILE} alt="profile-sample4" className="profile" />
-              <h2>PuddingBoi<span>Engineer</span></h2>
+              <h2>PuddingBoi<span>Engineer | Front-end</span></h2>
               <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
-              <a href="#" className="follow">Github</a>
+              <a href="https://github.com/Phukaoo08" className="follow" target="_blank" rel="noopener noreferrer">Github</a>
               <a href="#" className="info">Stu ID</a>
             </figcaption>
           </figure>
