@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { ExchangeContext } from "../contexts/ExchangeContext";
 import { ExchangeContextType } from "../@types/exchange";
+import { ContactMailOutlined } from "@mui/icons-material";
 
 interface IWebSelectBar {}
 
@@ -25,17 +26,23 @@ const exchangeList = [
 ];
 
 const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
-  const { exchanges } = useContext(ExchangeContext) as ExchangeContextType;
+  const { exchanges,toggleSelect } = useContext(ExchangeContext) as ExchangeContextType;
 
   const websites = [
     { website: "Explore Price", route: "/search" },
     { website: "About", route: "/about" },
     { website: "Nav3", route: "/" },
   ];
+
+  const handleBoxChecked = (e:React.ChangeEvent<HTMLInputElement>) => {
+    toggleSelect(e.target.value,e.target.checked);
+    console.log(e.target.name + e.target.checked);
+  }
+
   return (
     <Paper
       sx={{
-        borderStyle: "solid",
+        // borderStyle: "solid",
         m: 2,
         display: "flex",
         flexDirection: "column",
@@ -47,16 +54,18 @@ const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          borderStyle: "solid",
+          // borderStyle: "solid",
           justifyContent: "center",
           width: 0.7,
+          flexDirection:"row",
         }}
       >
         {exchanges.map((data) => {
           return (
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox onChange={handleBoxChecked} checked={data.isSelect}/>}
               label={data.name}
+              value={data.name}
               sx={{
                 flexGrow: 1,
                 maxWidth: 0.21,
