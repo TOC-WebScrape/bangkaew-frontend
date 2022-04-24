@@ -1,0 +1,371 @@
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.headBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mainBox{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.3));
+    background-image: url(../assets/icons/BitcoinBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 75%;
+}
+
+.sideBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #090909, #1A1A1A, #6D6D6D, #131313);
+    background: #141414;;
+    animation: gradient 15s ease infinite;
+    width: 25%;
+    height: 100%;
+}
+
+.content{
+  margin-top: -75px;
+}
+.content h6{
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.content p{
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* .personname {
+    text-align: center;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: 550;
+    font-size: 20px;    
+} */
+
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.row1, .row2 {
+    margin: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* .cardImage img{
+    width: 360px;
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+} */
+
+/* .profile img{
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-top: -75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    border: 10px solid #fff;
+}
+
+.profile img:hover{
+    transform: scale(1.1);
+}
+
+.position {
+    font-weight: 450;
+    font-size: 16px;
+}
+
+.email {
+    font-weight: 450;
+    font-size: 16px;
+} */
+
+.contact1, .contact2 {
+    border: none;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1);
+    outline: 0;
+    display: inline-block;
+    padding: 0px 8px 0px 8;
+    color: white;
+    background: linear-gradient(135deg, #28313b, #485461, #434343, #000000);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+/* Test another card css */
+
+.cardpro {
+    font-family: 'Roboto', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.4em;
+    background-color: #141414;
+  }
+  .cardpro * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+  .cardpro img {
+    max-width: 100%;
+    vertical-align: top;
+    opacity: 0.85;
+  }
+  .cardpro figcaption {
+    width: 100%;
+    background-color: #141414;
+    padding: 25px;
+    position: relative;
+  }
+  .cardpro figcaption:before {
+    position: absolute;
+    content: '';
+    bottom: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 55px 0 0 400px;
+    border-color: transparent transparent transparent #141414;
+  }
+  .cardpro figcaption a {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    margin: 10px 0;
+    display: inline-block;
+    opacity: 0.65;
+    width: 47%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .cardpro figcaption a:hover {
+    opacity: 1;
+  }
+
+  .cardpro .profile {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 25px;
+    z-index: 1;
+    max-width: 90px;
+    max-height: 90px;
+    width: 90px;
+    height: 90px;
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  .cardpro .follow {
+    margin-right: 4%;
+    border-color: #2980b9;
+    color: #2980b9;
+  }
+  .cardpro h2 {
+    margin: 0 0 15px;
+    font-weight: 300;
+  }
+  .cardpro h2 span {
+    margin-top: 5px;
+    display: block;
+    font-size: 0.5em;
+    color: #2980b9;
+  }
+  .cardpro p {
+    margin: 0 0 10px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
+  /* Animate Core spin */
+
+  .boxArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spinner-box{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
+
+  .configBorder1{
+    width: 57.5px;
+    height: 57.5px;
+    padding: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #141414;
+    animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+  }
+
+  .configBorder2{
+    width: 57.5px;
+    height: 57.5px;
+    left: -57.5px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2980b9;
+    transform: rotate(45deg);
+    animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+  }
+
+  .configCore{
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+
+  @keyframes configure-clockwise {
+    0%{
+      transform: rotate(0);
+    }
+
+    25%{
+      transform: rotate(90deg);
+    }
+
+    50%{
+      transform: rotate(180deg);
+    }
+
+    75%{
+      transform: rotate(270deg);
+    } 
+
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes configure-xclockwise {
+    0%{
+      transform: rotate(45);
+    }
+
+    25%{
+      transform: rotate(-45deg);
+    }
+
+    50%{
+      transform: rotate(-135deg);
+    }
+
+    75%{
+      transform: rotate(-225deg);
+    } 
+
+    100%{
+      transform: rotate(-315deg);
+    }
+  }
+
+  /* TeamText CSS */
+
+  .BangkaewText
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #17202A 0%,
+    #2C3E50 29%,
+    #154360 67%,
+    #2874A6 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 25px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}

@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
     {colorMode.toggleColorMode()}
   };
   return (
-    <AppBar sx={{ position: 'static', mb: 2 ,borderRadius:2}}>
+    <AppBar sx={{ position: 'static', mb: 0 }}>
       <Toolbar sx={{}}>
         <Avatar
           sx={{ mr: 2, height: 55, width: 55 }}
