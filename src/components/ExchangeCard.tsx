@@ -18,16 +18,7 @@ const ExchangeCard: React.FC<IPriceCard> = ({
   volume,
 }: IPriceCard) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        width: 400,
-        height: 100,
-        alignItems: "center",
-        padding: 10,
-        justifyContent: "space-between",
-      }}
-    >
+    <div className='flex items-center justify-between w-96 h-28 border-solid bg-red p-2.5'>
       <img src={imageUrl} alt='EXCHANGE' />
       <div>{currentPrice}$</div>
       <div>
@@ -36,14 +27,7 @@ const ExchangeCard: React.FC<IPriceCard> = ({
       </div>
       <div>
         {highestPrice}
-        <div
-          style={{
-            display: "flex",
-            width: "100%",
-            height: 1,
-            backgroundColor: "black",
-          }}
-        ></div>
+        <div className='flex w-full h-px bg-black'></div>
         {lowestPrice}
       </div>
       <div>{volume}$</div>

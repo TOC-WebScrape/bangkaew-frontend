@@ -1,57 +1,61 @@
-import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
-import Autocomplete from '@mui/material/Autocomplete';
-import { Box } from '@mui/system';
-import IconButton from '@mui/material/IconButton';
-import { SvgIcon, Typography, Button, Paper } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+import * as React from "react";
+import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
+import Autocomplete from "@mui/material/Autocomplete";
+import { Box } from "@mui/system";
+import IconButton from "@mui/material/IconButton";
+import { SvgIcon, Typography, Button, Paper } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
 
 interface SearchBoxProps {}
 const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
+  //TODO: Fetch from backend
   const suggestionCurrency = [
-    'Ethereum (ETH)',
-    'Litecoin (LTC)',
-    'Cardano (ADA)',
-    'Polkadot (DOT)',
-    'Bitcoin Cash (BCH)',
-    'Stellar (XLM)',
-    'Dogecoin (DOGE)',
-    'Binance Coin (BNB)',
+    "Ethereum (ETH)",
+    "Litecoin (LTC)",
+    "Cardano (ADA)",
+    "Polkadot (DOT)",
+    "Bitcoin Cash (BCH)",
+    "Stellar (XLM)",
+    "Dogecoin (DOGE)",
+    "Binance Coin (BNB)",
   ];
-  const [searchInput, setSearchInput] = React.useState('');
+
+  //TODO: Validate that the crypto name is in suggestionCurrency before submit
+
+  const [searchInput, setSearchInput] = React.useState("");
   const handleSearchInputChange = (e: any) => {
     setSearchInput(e.target.value);
   };
   const keyPress = (e: any) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       //setSearchInput(e.target.value);
       console.log(searchInput);
     }
   };
-  const handleSearchButtonClick = (e:any) => {
-    console.log(searchInput)
-  }
+  const handleSearchButtonClick = (e: any) => {
+    console.log(searchInput);
+  };
 
   return (
     <Box
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <Typography sx={{ py: 2 }}>Cryptocurrency Symbol</Typography>
       <Box
         sx={{
-          display: 'flex',
-          alignContent: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          alignContent: "center",
+          justifyContent: "center",
         }}
       >
         <Autocomplete
-          sx={{ width: 900, display: 'inline-block' }}
+          sx={{ width: 900, display: "inline-block" }}
           id='currency-search'
           freeSolo
           options={suggestionCurrency}
@@ -70,9 +74,9 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
         <IconButton
           onClick={handleSearchButtonClick}
           sx={{
-            borderStyle: 'solid',
-            borderBlockColor: 'black',
-            display: 'inline-block',
+            borderStyle: "solid",
+            borderBlockColor: "black",
+            display: "inline-block",
           }}
         >
           <SvgIcon component={SearchIcon} sx={{ width: 50, height: 40 }} />

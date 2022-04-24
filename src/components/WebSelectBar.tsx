@@ -14,6 +14,7 @@ import { ContactMailOutlined } from "@mui/icons-material";
 
 interface IWebSelectBar {}
 
+//TODO: Fetch from backend
 const exchangeList = [
   "Binance",
   "Bitfinex",
