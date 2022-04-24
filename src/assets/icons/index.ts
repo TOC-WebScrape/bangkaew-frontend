@@ -17,6 +17,11 @@ import TREE_PROFILE from './Tree.png';
 import JAME_PROFILE from './James.png';
 import BOSS_PROFILE from './Boss.png';
 
+// Background
+import bg1 from './BitcoinBG.jpg';
+import bg2 from './GraphBG1.jpg';
+import bg3 from './GraphBG2.png';
+
 export {
     BINANCE_ICON,
     BITFINEX_ICON,
@@ -33,4 +38,7 @@ export {
     TREE_PROFILE,
     JAME_PROFILE,
     BOSS_PROFILE,
+    bg1,
+    bg2,
+    bg3,
 }
