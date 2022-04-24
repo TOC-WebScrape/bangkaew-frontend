@@ -1,5 +1,5 @@
 import { SearchBox, WebSelectBar } from ".";
-import { Box } from '@mui/material';
+import { Box } from "@mui/material";
 import ExchangeCard from "./ExchangeCard";
 import { EXCHANGE_CARD } from "../MockData";
 import { BINANCE_ICON } from "../assets/icons";
@@ -12,7 +12,7 @@ const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
   return (
     <div>
       <SearchBox />
-      <WebSelectBar/>
+      <WebSelectBar />
       <ExchangeCard
         currentPrice={data.currentPrice}
         highestPrice={data.highestPrice}

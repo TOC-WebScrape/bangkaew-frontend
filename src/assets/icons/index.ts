@@ -8,6 +8,16 @@ import FTX_ICON from './FTX.png';
 import GATEIO_ICON from './Gateio.png';
 import KUCOIN_ICON from './Kucoin.png';
 
+//New Trading coins icons
+import ADA_ICON from './ADA.png';
+import BCH_ICON from './BCH.png';
+import BNB_ICON from './BNB.png';
+import DODGE_ICON from './DDGE.png';
+import DOT_ICON from './DOT.png';
+import ETH_ICON from './ETH.png';
+import LTC_ICON from './LTC.png';
+import XLM_ICON from './XLM.png';
+
 // Profile Pic
 import PHUKAO_PROFILE from './Phukao.png';
 import KORN_PROFILE from './Apextone.png';
