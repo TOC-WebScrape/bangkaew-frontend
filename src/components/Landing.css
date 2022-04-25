@@ -1,0 +1,288 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.headZone {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.context {
+    width: 30%;
+    height: 100%;
+    /* background: linear-gradient(120deg, #04619f, #000000, #000000, #04619f);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite; */
+    background: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.BK {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+    border-width: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    padding: 30px;
+}
+
+
+.bkQuote {
+    color: white;
+    font-size: 20px;
+}
+
+.contain {
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 10px 25px 30px rgba(0,0,0,0.3);
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+img {
+    width: 1920px;
+    height: 1080px;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    55%{
+        transform: translateX(-200%);
+    }
+    75%{
+        transform: translateX(-200%);
+    }
+    80%{
+        transform: translateX(-300%);
+    }
+    100%{
+        transform: translateX(-300%);
+    }
+}
+
+
+.gitArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Boxcard {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    padding-bottom: 10rem;
+}
+
+.left1{
+    width: 40%;
+    height: 600px;
+    background: url(../assets/icons/bgVtc1.jpg) no-repeat center / cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
+}
+
+.left2{
+    width: 40%;
+    height: 600px;
+    background: url(../assets/icons/bgVtc2.jpg) no-repeat center / cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
+}
+
+.right{
+    width: 55%;
+    min-height: 400px;
+    background: linear-gradient(135deg,#04619f, #000000, #000000, #04619f);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 8px;
+    color: white;
+    margin-left: -130px;
+}
+
+.right h1{
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+.right p{
+    margin: 20px 0;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.right a{
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    padding: 20px 30px;
+    display: inline-block;
+    letter-spacing: 2px;
+    border-radius: 4px;
+}
+
+.footer{
+    background: linear-gradient(90deg, #04619f, #000000, #000000, #04619f);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: auto;
+    width: 100%;
+    font-family: sans-serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.footerContent h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footerContent p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+/* Button footer */
+
+
+.btnFont a{
+    display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+  /* border: 2px solid white; */
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.btnFont a span{
+    position: relative;
+    z-index: 2;
+}
+
+.btnFont a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    transition: all .35s;
+}
+  
+.btnFont a:hover{
+    color: #000000;
+}
+  
+.btnFont a:hover:after{
+    width: 100%;
+}
+
+
+
+/* Backend button */
+
+.btnBack a{
+    display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+  /* border: 2px solid white; */
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.btnBack a span{
+    position: relative;
+    z-index: 2;
+}
+
+.btnBack a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    transition: all .35s;
+}
+  
+.btnBack a:hover{
+    color: #000000;
+}
+  
+.btnBack a:hover:after{
+    width: 100%;
+}
