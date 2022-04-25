@@ -31,6 +31,8 @@ import BOSS_PROFILE from './Boss.png';
 import bg1 from './BitcoinBG.jpg';
 import bg2 from './GraphBG1.jpg';
 import bg3 from './GraphBG2.png';
+import bg4 from './bitcoinAna.jpg';
+import bg5 from './bitcoinTrophy.jpg';
 
 export {
     BINANCE_ICON,
@@ -51,4 +53,6 @@ export {
     bg1,
     bg2,
     bg3,
+    bg4,
+    bg5,
 }
