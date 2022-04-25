@@ -2,11 +2,14 @@
   "name": "bangkaew-frontend",
   "private": true,
   "version": "0.0.0",
+  "homepage": "http://TOC-WebScrape.github.io/bangkaew-frontend",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.8.2",
@@ -24,6 +27,7 @@
     "@types/react-dom": "^17.0.10",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.5",
+    "gh-pages": "^3.2.3",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
     "typescript": "^4.5.4",
