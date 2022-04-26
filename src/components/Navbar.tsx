@@ -15,6 +15,7 @@ import {
   LinkedCameraTwoTone,
 } from "@mui/icons-material";
 import { ThemeProvider, ThemeContext } from "../contexts";
+import { AppIcon } from "../assets/icons";
 
 interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
@@ -37,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
         <Link to='/' className='grow flex flex-row items-center'>
           <Avatar
             sx={{ mr: 2, height: 55, width: 55 }}
-            src='https://avatars.githubusercontent.com/u/63555111?v=4'
+            src={AppIcon}
           ></Avatar>
           <Typography sx={{ color: "white", flexGrow: 1 }} variant='h6'>
             Bangkaew

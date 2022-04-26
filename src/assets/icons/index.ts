@@ -34,6 +34,9 @@ import bg3 from './GraphBG2.png';
 import bg4 from './bitcoinAna.jpg';
 import bg5 from './bitcoinTrophy.jpg';
 
+// App Icon
+import AppIcon from './BangkaewLogo.svg';
+
 export {
     BINANCE_ICON,
     BITFINEX_ICON,
@@ -55,4 +58,5 @@ export {
     bg3,
     bg4,
     bg5,
+    AppIcon,
 }
