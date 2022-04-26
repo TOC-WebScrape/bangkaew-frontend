@@ -248,7 +248,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 className='profile'
               />
               <h2>
-                Treepangkorn<span>Engineer | Front-end</span>
+                Treepakorn<span>Engineer | Front-end</span>
               </h2>
               <p>
                 I'm looking for something that can deliver a 50-pound payload of
