@@ -14,18 +14,6 @@ import { ContactMailOutlined } from "@mui/icons-material";
 
 interface IWebSelectBar {}
 
-//TODO: Fetch from backend
-const exchangeList = [
-  "Binance",
-  "Bitfinex",
-  "Coinbase",
-  "Coinsbit",
-  "eToroX",
-  "FTX",
-  "Gateio",
-  "Kucoin",
-];
-
 const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
   const { exchanges, toggleSelect } = useContext(
     ExchangeContext
