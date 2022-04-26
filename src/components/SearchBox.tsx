@@ -9,7 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 interface SearchBoxProps {}
 const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
-  //TODO: Fetch from backend
+  //TODO: Fetch from backend (or hard-coded): fetch suggestion from backend when string change (/api/suggest)
   const suggestionCurrency = [
     "Ethereum (ETH)",
     "Litecoin (LTC)",
@@ -31,6 +31,8 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
     if (e.key === "Enter") {
       //setSearchInput(e.target.value);
       console.log(searchInput);
+      //TODO: GET data from backend: api/crypto/{name}?cex=bi,ga,ku,bi
+      //TODO: If all cex is not selected, alert the user (don't fetch)
     }
   };
   const handleSearchButtonClick = (e: any) => {

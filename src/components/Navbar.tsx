@@ -20,9 +20,9 @@ import { AppIcon } from "../assets/icons";
 interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
   const pages = [
-    { page: "Home", route: "/" },
-    { page: "Explore Price", route: "/search" },
-    { page: "About", route: "/about" },
+    { page: "Home", route: "/bangkaew-frontend" },
+    { page: "Explore Price", route: "/bangkaew-frontend/search" },
+    { page: "About", route: "/bangkaew-frontend/about" },
   ];
   const [dark, toggleDark] = useState(false);
   const colorMode = useContext(ThemeContext);

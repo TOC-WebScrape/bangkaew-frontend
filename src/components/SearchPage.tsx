@@ -3,11 +3,18 @@ import { Box } from "@mui/material";
 import ExchangeCard from "./ExchangeCard";
 import { EXCHANGE_CARD } from "../MockData";
 import { BINANCE_ICON } from "../assets/icons";
+import { useEffect } from "react";
 
 interface SearchPageProps {}
 
 const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
   const data = EXCHANGE_CARD;
+
+  useEffect(() => {
+    setInterval(() => {
+      //TODO: implement fetching exchange card data
+    }, 10000);
+  }, []);
 
   return (
     <div>
