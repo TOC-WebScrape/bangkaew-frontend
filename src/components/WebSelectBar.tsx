@@ -71,6 +71,7 @@ const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
               }
               label={data.name}
               value={data.name}
+              key={data.name}
               sx={{
                 flexGrow: 1,
                 maxWidth: 0.21,
