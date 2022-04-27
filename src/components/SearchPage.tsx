@@ -1,26 +1,34 @@
 import { SearchBox, WebSelectBar } from ".";
-import { Box } from "@mui/material";
+import { Box, Paper } from "@mui/material";
 import ExchangeCard from "./ExchangeCard";
 import { EXCHANGE_CARD } from "../MockData";
-import { BINANCE_ICON } from "../assets/icons";
+import { BINANCE_ICON, TradingIcons } from "../assets/icons";
 
 interface SearchPageProps {}
-
 const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
   const data = EXCHANGE_CARD;
 
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <SearchBox />
       <WebSelectBar />
-      <ExchangeCard
-        currentPrice={data.currentPrice}
-        highestPrice={data.highestPrice}
-        imageUrl={BINANCE_ICON}
-        lowestPrice={data.lowestPrice}
-        percentChange={data.percentChange}
-        volume={data.volume}
-      />
+      <Paper className='flex flex-wrap justify-center'>
+        {TradingIcons.map(({ name, icon, rateStatus}) => {
+        return (
+          <ExchangeCard
+            currentPrice={data.currentPrice}
+            highestPrice={data.highestPrice}
+            // imageUrl={data.imageUrl}
+            imageUrl={icon}
+            lowestPrice={data.lowestPrice}
+            percentChange={data.percentChange}
+            volume={data.volume}
+            key={name}
+            rateStatus={rateStatus}
+          />
+        );})}
+      </Paper>
+      
     </div>
   );
 };

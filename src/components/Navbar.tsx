@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
     }
   };
   return (
-    <AppBar sx={{ position: "static", mb: 0 }}>
+    <AppBar sx={{ position: "sticky", mb: 0 }}>
       <Toolbar sx={{}}>
         <Link to='/' className='grow flex flex-row items-center'>
           <Avatar

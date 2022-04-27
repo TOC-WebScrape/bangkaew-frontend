@@ -47,37 +47,49 @@ const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
       sx={{
         // borderStyle: "solid",
         m: 2,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent:'center',
+        backgroundColor: '#2EB872',
+        borderRadius:3,
+        py:5,
+        width:0.9
       }}
     >
-      <Typography sx={{ textAlign: "center" }}>Exchange Websites</Typography>
+      <Typography sx={{ textAlign: 'center', fontSize: 50 }}>
+        Exchange Websites
+      </Typography>
       <FormGroup
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
+          display: 'flex',
+          flexWrap: 'wrap',
           // borderStyle: "solid",
-          justifyContent: "center",
+          justifyContent: 'center',
           width: 0.7,
-          flexDirection: "row",
+          flexDirection: 'row',
         }}
       >
         {exchanges.map((data) => {
           return (
             <FormControlLabel
               control={
-                <Checkbox onChange={handleBoxChecked} checked={data.isSelect} />
+                <Checkbox
+                  onChange={handleBoxChecked}
+                  checked={data.isSelect}
+                />
               }
               label={data.name}
               value={data.name}
+              className='border-2'
               sx={{
                 flexGrow: 1,
                 maxWidth: 0.21,
                 width: 0.21,
-                borderStyle: "solid",
                 maxHeight: 40,
                 m: 2,
+                backgroundColor: '#F1F1F1',
+                borderRadius:2,
               }}
             />
           );

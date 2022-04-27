@@ -47,7 +47,7 @@ const InitExchange: IExchange[] = [
   },
 ];
 
-const ExchangeProvider: React.FC<React.ReactNode> = ({ children }) => {
+export const ExchangeProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [exchanges, setExchanges] = useState<IExchange[]>(InitExchange);
 
   const toggleSelect = (name: string, isSelect: boolean) => {

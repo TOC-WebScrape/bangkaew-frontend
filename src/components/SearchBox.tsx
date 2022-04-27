@@ -46,7 +46,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
         alignItems: "center",
       }}
     >
-      <Typography sx={{ py: 2 }}>Cryptocurrency Symbol</Typography>
+      <Typography sx={{ py: 2, fontSize:50, fontWeight:'bold' }}>Cryptocurrency Symbol</Typography>
       <Box
         sx={{
           display: "flex",
