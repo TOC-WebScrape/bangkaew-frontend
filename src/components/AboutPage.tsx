@@ -16,7 +16,7 @@ interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
   return (
-    <body>
+    <div>
       <div className='headBox'>
         <div className='mainBox'></div>
         <div className='sideBox'>
@@ -42,7 +42,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
 
       {/* animate boxes */}
       <div className='boxArea'>
-        <text className='BangkaewText'>BANGKAEW</text>
+        <p className='BangkaewText'>BANGKAEW</p>
         <div className='spinner-box'>
           <div className='configBorder1'>
             <div className='configCore'></div>
@@ -51,7 +51,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
             <div className='configCore'></div>
           </div>
         </div>
-        <text className='BangkaewText'>TEAM</text>
+        <p className='BangkaewText'>TEAM</p>
       </div>
 
       {/* card profile area */}
@@ -248,7 +248,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 className='profile'
               />
               <h2>
-                Treepangkorn<span>Engineer | Front-end</span>
+                Treepakorn<span>Engineer | Front-end</span>
               </h2>
               <p>
                 I'm looking for something that can deliver a 50-pound payload of
@@ -340,7 +340,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
           </figure>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 

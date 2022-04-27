@@ -7,42 +7,26 @@
  * @author SnapM (Jame)
  */
 
-import React, { createContext, useState } from 'react';
-import { ExchangeContextType, IExchange } from '../@types/exchange';
+import React, { createContext, useState } from "react";
+import { ExchangeContextType, IExchange } from "../@types/exchange";
 
 export const ExchangeContext = createContext<ExchangeContextType | null>(null);
 
 const InitExchange: IExchange[] = [
   {
-    name: 'Binance',
+    name: "Binance",
     isSelect: true,
   },
   {
-    name: 'Bitfinex',
+    name: "Gateio",
     isSelect: true,
   },
   {
-    name: 'Coinbase',
+    name: "Kucoin",
     isSelect: true,
   },
   {
-    name: 'Coinsbit',
-    isSelect: true,
-  },
-  {
-    name: 'eToroX',
-    isSelect: true,
-  },
-  {
-    name: 'FTX',
-    isSelect: true,
-  },
-  {
-    name: 'Gateio',
-    isSelect: true,
-  },
-  {
-    name: 'Kucoin',
+    name: "BitMart",
     isSelect: true,
   },
 ];
