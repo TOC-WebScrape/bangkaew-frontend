@@ -12,12 +12,84 @@ import KUCOIN_ICON from './Kucoin.png';
 import ADA_ICON from './ADA.png';
 import BCH_ICON from './BCH.png';
 import BNB_ICON from './BNB.png';
-import DODGE_ICON from './DDGE.png';
+import DODGE_ICON from './DODGE.png';
 import DOT_ICON from './DOT.png';
 import ETH_ICON from './ETH.png';
 import LTC_ICON from './LTC.png';
 import XLM_ICON from './XLM.png';
 
+const TradingIcons = [
+  {
+    name: 'COINSBIT_ICON',
+    icon: COINSBIT_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'ETOROX_ICON',
+    icon: ETOROX_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'FTX_ICON',
+    icon: FTX_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'GATEIO_ICON',
+    icon: GATEIO_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'KUCOIN_ICON',
+    icon: KUCOIN_ICON,
+    rateStatus: false,
+  },
+  {
+    name: 'BITFINEX_ICON',
+    icon: BITFINEX_ICON,
+    rateStatus: false,
+  },
+  {
+    name: 'ADA_ICON',
+    icon: ADA_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'BCH_ICON',
+    icon: BCH_ICON,
+    rateStatus: false,
+  },
+  {
+    name: 'BNB_ICON',
+    icon: BNB_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'DODGE_ICON',
+    icon: DODGE_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'DOT_ICON',
+    icon: DOT_ICON,
+    rateStatus: true,
+  },
+  {
+    name: 'ETH_ICON',
+    icon: ETH_ICON,
+    rateStatus: false,
+  },
+  {
+    name: 'LTC_ICON',
+    icon: LTC_ICON,
+    rateStatus: false,
+  },
+  {
+    name: 'XLM_ICON',
+    icon: XLM_ICON,
+    rateStatus: false,
+  },
+];
 // Profile Pic
 import PHUKAO_PROFILE from './Phukao.png';
 import KORN_PROFILE from './Apextone.png';
@@ -33,6 +105,7 @@ import bg2 from './GraphBG1.jpg';
 import bg3 from './GraphBG2.png';
 import bg4 from './bitcoinAna.jpg';
 import bg5 from './bitcoinTrophy.jpg';
+import { Upcoming } from '@mui/icons-material';
 
 // App Icon
 import AppIcon from './BangkaewLogo.svg';
@@ -59,4 +132,5 @@ export {
     bg4,
     bg5,
     AppIcon,
+    TradingIcons,
 }

@@ -2,10 +2,10 @@ import "./App.css";
 import { LandingPage, SearchPage, AboutPage } from "./components";
 import { Navbar } from "./components";
 import { Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "./contexts";
+import { ThemeProvider, ExchangeProvider } from './contexts';
 import { Paper } from "@mui/material";
 import { Box } from "@mui/system";
-import ExchangeProvider from "./contexts/ExchangeContext";
+// import ExchangeProvider from "./contexts/ExchangeContext";
 
 const MyApp = () => {
   return (

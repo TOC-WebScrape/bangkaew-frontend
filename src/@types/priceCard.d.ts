@@ -5,4 +5,5 @@ export interface IPriceCard {
   highestPrice: string | number;
   lowestPrice: string | number;
   volume: string | number;
+  rateStatus: boolean;
 }
