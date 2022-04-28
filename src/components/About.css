@@ -47,7 +47,7 @@ body {
 }
 
 .content{
-  margin-top: -75px;
+  margin-top: 20px;
 }
 .content h6{
   font-size: 40px;
@@ -173,6 +173,7 @@ body {
   }
   .cardpro img {
     max-width: 100%;
+    max-height: 200px;
     vertical-align: top;
     opacity: 0.85;
   }
@@ -361,7 +362,7 @@ body {
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      font-size: 40px;
+  font-size: 25px;
 }
 
 @keyframes textclip {
