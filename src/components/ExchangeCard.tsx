@@ -46,27 +46,32 @@ const ExchangeCard: React.FC<IPriceCard> = ({
 
   // Bean's card
   return (
-      <Card
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'left',
+        flexGrow:1,
+        maxWidth: 0.7,
+        maxHeight: 200,
+        border: 2,
+        borderRadius: 3,
+        margin: 1,
+        boxShadow: 2,
+      }}
+    >
+      <CardMedia
+        component={'img'}
+        image={imageUrl}
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexGrow: 1,
-          maxWidth: 0.4,
-          width: 0.4,
-          border: 2,
-          borderRadius: 3,
-          margin: 2,
-          boxShadow: 2,
+          height: 0.8,
+          width: 'auto',
+          ml: 5,
+          my: 2,
+          mr: 4
         }}
-      >
-        <CardMedia
-          component={'img'}
-          alt='coin name'
-          image={imageUrl}
-          sx={{ height: 'auto', width: 0.2, margin: 2 }}
-        />
-        {/* <CardContent sx={{}}>
+      />
+      {/* <CardContent sx={{}}>
           <Typography
             variant={'h5'}
             component={'div'}
@@ -75,21 +80,39 @@ const ExchangeCard: React.FC<IPriceCard> = ({
             {currentPrice}$
           </Typography>
         </CardContent> */}
-        <Stack direction={'row'} gap={6} sx={{ mx: 4 }}>
-          {/* currentPrice */}
+      <Stack direction={'row'} gap={10} sx={{ ml:5, alignItems: 'top',justifyContent:'right' }}>
+        {/* currentPrice */}
+        <Stack sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Typography
+            component={'div'}
+            sx={{ display: 'flex', alignItems: 'center', fontSize: 20 }}
+          >
+            CURRENT PRIZE
+          </Typography>
           <Typography
             variant={'h5'}
             component={'div'}
-            sx={{ display: 'flex', alignItems: 'center'}}
+            sx={{ display: 'flex', alignItems: 'center', mt: 1 }}
           >
             {currentPrice}$
           </Typography>
+        </Stack>
 
-          {/* percentChange */}
+        {/* percentChange */}
+        <Stack sx={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+          <Typography
+            component={'div'}
+            sx={{ display: 'flex', alignItems: 'center', fontSize: 20 }}
+          >
+            CHANGE RATE
+          </Typography>
           {rateStatus ? (
-            <Stack sx={{ justifyContent: 'center',}}>
+            <Stack sx={{ justifyContent: 'center', mt: 2 }}>
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <SvgIcon sx={{ color: '#21BF73' }} component={ArrowDropUpIcon} />
+                <SvgIcon
+                  sx={{ color: '#21BF73' }}
+                  component={ArrowDropUpIcon}
+                />
               </Box>
               <Typography
                 variant={'h5'}
@@ -106,7 +129,7 @@ const ExchangeCard: React.FC<IPriceCard> = ({
               </Typography>
             </Stack>
           ) : (
-            <Stack sx={{ justifyContent: 'center',}}>
+            <Stack sx={{ justifyContent: 'center', mb: 2 }}>
               <Typography
                 variant={'h5'}
                 component={'div'}
@@ -120,48 +143,69 @@ const ExchangeCard: React.FC<IPriceCard> = ({
                 {percentChange}%
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <SvgIcon sx={{ color: '#FA4659' }} component={ArrowDropDownIcon}
+                <SvgIcon
+                  sx={{ color: '#FA4659' }}
+                  component={ArrowDropDownIcon}
                 />
               </Box>
             </Stack>
           )}
+        </Stack>
 
-          {/* highest/lowest price */}
-          <Stack
-            sx={{
-              width: 100,
-              justifyContent: 'center',
-              alignItems: 'center',
-              
-            }}
+        {/* highest/lowest price */}
+        <Stack
+          sx={{
+            justifyContent: 'top',
+            alignItems: 'center',
+          }}
+        >
+          <Typography
+            component={'div'}
+            sx={{ display: 'flex', alignItems: 'center', fontSize: 20, mb: 1 }}
           >
-            <Typography
-              variant={'h5'}
-              component={'div'}
-              sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
-            >
-              {highestPrice}$
-            </Typography>
-            <Box sx={{ border: 1, width: 100 }}></Box>
-            <Typography
-              variant={'h5'}
-              component={'div'}
-              sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
-            >
-              {lowestPrice}$
-            </Typography>
-          </Stack>
-
-          {/* volume */}
+            MAX/MIN PRIZE
+          </Typography>
           <Typography
             variant={'h5'}
             component={'div'}
-            sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
+            sx={{ display: 'flex', alignItems: 'center', my: 0.5 }}
+          >
+            {highestPrice}$
+          </Typography>
+          <Box sx={{ border: 1, width: 100 }}></Box>
+          <Typography
+            variant={'h5'}
+            component={'div'}
+            sx={{ display: 'flex', alignItems: 'center', my: 0.5 }}
+          >
+            {lowestPrice}$
+          </Typography>
+        </Stack>
+
+        {/* volume */}
+        <Stack
+          sx={{
+            justifyContent: 'top',
+            alignItems: 'left',
+            display:'flex',
+          }}
+        >
+          <Typography
+            component={'div'}
+            sx={{ display: 'flex', fontSize: 20, mb: 3 }}
+          >
+            VOLUME
+          </Typography>
+          <Typography
+            variant={'h5'}
+            component={'div'}
+            sx={{ display: 'flex', alignItems: 'center',}}
           >
             {volume}$
           </Typography>
         </Stack>
-      </Card>
+      </Stack>
+    </Box>
   );
 };
 
