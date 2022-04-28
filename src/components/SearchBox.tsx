@@ -40,6 +40,10 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
         if (e.key === "Enter") {
             //setSearchInput(e.target.value);
             console.log(searchInput);
+            exchangeService.currency(searchInput).then((result) => {
+                console.log(result.data.bn);
+            });
+            
             //TODO: GET data from backend: api/crypto/{name}?cex=bi,ga,ku,bi
             //TODO: If all cex is not selected, alert the user (don't fetch)
         }

@@ -46,122 +46,123 @@ const ExchangeCard: React.FC<IPriceCard> = ({
 
   // Bean's card
   return (
-    <Card
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexGrow: 1,
-        maxWidth: 0.4,
-        width: 0.4,
-        border: 2,
-        borderRadius: 3,
-        margin: 2,
-        boxShadow: 2,
-      }}
-    >
-      <CardMedia
-        component={'img'}
-        alt='coin name'
-        height={'140'}
-        image={imageUrl}
-        sx={{ height: 100, width: 'auto', margin: 2 }}
-      />
-      {/* <CardContent sx={{}}>
-        <Typography
-          variant={'h5'}
-          component={'div'}
-          sx={{ border: 1, display: 'flex', textAlign: 'center' }}
-        >
-          {currentPrice}$
-        </Typography>
-      </CardContent> */}
-      <Stack direction={'row'} gap={6} sx={{ mx: 4 }}>
-        {/* currentPrice */}
-        <Typography
-          variant={'h5'}
-          component={'div'}
-          sx={{ display: 'flex', alignItems: 'center' }}
-        >
-          {currentPrice}$
-        </Typography>
-
-        {/* percentChange */}
-        {rateStatus ? (
-          <Stack sx={{ justifyContent: 'center',}}>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <SvgIcon sx={{ color: '#21BF73' }} component={ArrowDropUpIcon} />
-            </Box>
-            <Typography
-              variant={'h5'}
-              component={'div'}
-              color='#21BF73'
-              sx={{
-                display: 'flex',
-                textAlign: 'center',
-                mb: 3,
-                color: '#21BF73',
-              }}
-            >
-              {percentChange}%
-            </Typography>
-          </Stack>
-        ) : (
-          <Stack sx={{ justifyContent: 'center',}}>
-            <Typography
-              variant={'h5'}
-              component={'div'}
-              sx={{
-                display: 'flex',
-                textAlign: 'center',
-                mt: 3,
-                color: '#FA4659',
-              }}
-            >
-              {percentChange}%
-            </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <SvgIcon sx={{ color: '#FA4659' }} component={ArrowDropDownIcon}
-              />
-            </Box>
-          </Stack>
-        )}
-
-        {/* highest/lowest price */}
-        <Stack
-          sx={{
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            
-          }}
-        >
+    <Card>
+      <Card
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexGrow: 1,
+          maxWidth: 0.4,
+          width: 0.4,
+          border: 2,
+          borderRadius: 3,
+          margin: 2,
+          boxShadow: 2,
+        }}
+      >
+        <CardMedia
+          component={'img'}
+          alt='coin name'
+          image={imageUrl}
+          sx={{ height: 'auto', width: 0.2, margin: 2 }}
+        />
+        {/* <CardContent sx={{}}>
           <Typography
             variant={'h5'}
             component={'div'}
-            sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
+            sx={{ border: 1, display: 'flex', textAlign: 'center' }}
           >
-            {highestPrice}$
+            {currentPrice}$
           </Typography>
-          <Box sx={{ border: 1, width: 100 }}></Box>
+        </CardContent> */}
+        <Stack direction={'row'} gap={6} sx={{ mx: 4 }}>
+          {/* currentPrice */}
+          <Typography
+            variant={'h5'}
+            component={'div'}
+            sx={{ display: 'flex', alignItems: 'center'}}
+          >
+            {currentPrice}$
+          </Typography>
+
+          {/* percentChange */}
+          {rateStatus ? (
+            <Stack sx={{ justifyContent: 'center',}}>
+              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                <SvgIcon sx={{ color: '#21BF73' }} component={ArrowDropUpIcon} />
+              </Box>
+              <Typography
+                variant={'h5'}
+                component={'div'}
+                color='#21BF73'
+                sx={{
+                  display: 'flex',
+                  textAlign: 'center',
+                  mb: 3,
+                  color: '#21BF73',
+                }}
+              >
+                {percentChange}%
+              </Typography>
+            </Stack>
+          ) : (
+            <Stack sx={{ justifyContent: 'center',}}>
+              <Typography
+                variant={'h5'}
+                component={'div'}
+                sx={{
+                  display: 'flex',
+                  textAlign: 'center',
+                  mt: 3,
+                  color: '#FA4659',
+                }}
+              >
+                {percentChange}%
+              </Typography>
+              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                <SvgIcon sx={{ color: '#FA4659' }} component={ArrowDropDownIcon}
+                />
+              </Box>
+            </Stack>
+          )}
+
+          {/* highest/lowest price */}
+          <Stack
+            sx={{
+              width: 100,
+              justifyContent: 'center',
+              alignItems: 'center',
+              
+            }}
+          >
+            <Typography
+              variant={'h5'}
+              component={'div'}
+              sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
+            >
+              {highestPrice}$
+            </Typography>
+            <Box sx={{ border: 1, width: 100 }}></Box>
+            <Typography
+              variant={'h5'}
+              component={'div'}
+              sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
+            >
+              {lowestPrice}$
+            </Typography>
+          </Stack>
+
+          {/* volume */}
           <Typography
             variant={'h5'}
             component={'div'}
             sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
           >
-            {lowestPrice}$
+            {volume}$
           </Typography>
         </Stack>
-
-        {/* volume */}
-        <Typography
-          variant={'h5'}
-          component={'div'}
-          sx={{  display: 'flex', alignItems: 'center', my: 0.5 }}
-        >
-          {volume}$
-        </Typography>
-      </Stack>
+      </Card>
     </Card>
   );
 };
