@@ -1,5 +1,5 @@
 import { IPriceCard } from "../@types/priceCard";
-import { BINANCE_ICON, BITMART_ICON, GATEIO_ICON, KUCOIN_ICON, TradingIcons } from "../assets/icons";
+import { BINANCE_ICON, BITMART_ICON, GATEIO_ICON, KUCOIN_ICON } from "../assets/icons";
 /*
 export interface IPriceCard {
   imageUrl: string;
