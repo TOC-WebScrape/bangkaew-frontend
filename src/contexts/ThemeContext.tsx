@@ -9,16 +9,17 @@ export const ThemeContext = createContext({
 
 export const ThemeProvider: FC = ({ children }) => {
   const [mode, setMode] = useState<PaletteMode>('light');
-
+  
   const colorMode = useMemo(() => ({
       toggleColorMode: () => {
         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
         console.log("toggle Color Mode to"+ {mode})
+        const currentMode = mode;
       },
     }),
     [],
   );
-
+  
 const theme = useMemo(
   () =>
     createTheme({

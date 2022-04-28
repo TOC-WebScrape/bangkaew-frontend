@@ -23,7 +23,7 @@ const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
         <div className="flex flex-col items-center">
             <SearchBox />
             <WebSelectBar />
-            <Paper className="flex flex-wrap justify-center">
+            <Paper className="flex flex-wrap justify-center w-full">
                 {exchanges.map(({ data, isSelect }, index) => {
                     if (data && isSelect) {
                         return (
