@@ -21,9 +21,17 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
     ExchangeContext
   ) as ExchangeContextType;
 
+  const [intervalId, setIntervalId] = React.useState<number>(0);
+
   React.useEffect(() => {
     fetchSuggest();
   }, []);
+
+  React.useEffect(() => {
+    console.log("interval changed", intervalId);
+
+    return () => clearInterval(intervalId);
+  }, [intervalId]);
 
   const handleSearchInputChange = (value: string) => {
     setSearchInput(value);
@@ -50,20 +58,21 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
   const handleSearchButtonClick = (e: any) => {
     fetchPrice(searchInput);
 
-    setInterval(() => {
-      if (
-        suggestList.filter(
-          (suggestion: String) =>
-            suggestion.toLowerCase() == searchInput.toLowerCase()
-        ).length > 0
-      ) {
-        console.log("fetching");
-        fetchPrice(searchInput);
-      }
-    }, 12000);
+    clearInterval(intervalId);
+    setIntervalId(
+      setInterval(() => {
+        if (
+          suggestList.filter(
+            (suggestion: String) =>
+              suggestion.toLowerCase() == searchInput.toLowerCase()
+          ).length > 0
+        ) {
+          console.log("fetching");
+          fetchPrice(searchInput);
+        }
+      }, 12000)
+    );
   };
-
-  //TODO: Fetch from backend (or hard-coded): fetch suggestion from backend when string change (/api/suggest)
 
   /**
    * @dev fetchSuggest will fetch suggest data from backend and
