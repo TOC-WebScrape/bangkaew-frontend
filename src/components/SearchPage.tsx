@@ -25,7 +25,7 @@ const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
             <WebSelectBar />
             <Paper className="flex flex-wrap justify-center">
                 {exchanges.map(({ data, isSelect }, index) => {
-                    if (data && isSelect)
+                    if (data && isSelect) {
                         return (
                             <ExchangeCard
                                 currentPrice={data.currentPrice}
@@ -39,6 +39,7 @@ const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
                                 key={index}
                             />
                         );
+                    }
                 })}
             </Paper>
         </div>
