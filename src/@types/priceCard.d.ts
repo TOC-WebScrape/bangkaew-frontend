@@ -7,3 +7,12 @@ export interface IPriceCard {
   volume: string | number;
   rateStatus: boolean;
 }
+
+export interface IPriceData {
+  name: string;
+  price: string;
+  change: string;
+  high_low: string;
+  volume: string;
+  marketcap: string;
+}
