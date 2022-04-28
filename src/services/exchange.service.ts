@@ -1,8 +1,8 @@
 import axios_base from "../http-common";
 
 class ExchangeService {
-  suggest(keyword: string) {
-    return axios_base.get<any>(`/suggest?text=${keyword}`);
+  suggest() {
+    return axios_base.get<any>(`/currency-name`);
   }
 
   currency(name: string) {

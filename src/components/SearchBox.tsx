@@ -10,13 +10,19 @@ import { CryptoList, CryptoNameMap } from "../utils/CryptoInfo";
 import exchangeService from "../services/exchange.service";
 import { ExchangeContext } from "../contexts/ExchangeContext";
 import { ExchangeContextType } from "../@types/exchange";
+import axios from "axios";
 
 interface SearchBoxProps {}
 const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
     //TODO: Validate that the crypto name is in suggestionCurrency before submit
-
     const [searchInput, setSearchInput] = React.useState("");
     const [suggestList, setSuggestList] = React.useState([]);
+
+    React.useEffect(() =>{
+        fetchSuggest();
+    },[])
+
+
     const { fetchPrice } = React.useContext(
         ExchangeContext
     ) as ExchangeContextType;
@@ -30,7 +36,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
      */
     const keyPress = (e: any) => {
         console.log(e.target.value);
-        fetchSuggest();
+        // fetchSuggest();
         if (e.key === "Enter") {
             //setSearchInput(e.target.value);
             console.log(searchInput);
@@ -57,64 +63,61 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
      * But now! option can't update with state.
      */
     const fetchSuggest = () => {
-        exchangeService.suggest(searchInput).then((result) => {
-            console.log(result.data.suggest);
-            setSuggestList(result.data.suggest);
+        exchangeService.suggest().then((result) => {
+            console.log(result.data.result);
+            setSuggestList(result.data.result);
         });
     };
 
     return (
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Typography sx={{ py: 2, fontSize: 50, fontWeight: 'bold' }}>
+          Cryptocurrency Symbol
+        </Typography>
+        {/* <h1>{searchInput}</h1> */}
         <Box
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-            }}
+          sx={{
+            display: 'flex',
+            alignContent: 'center',
+            justifyContent: 'center',
+          }}
         >
-            <Typography sx={{ py: 2, fontSize: 50, fontWeight: "bold" }}>
-                Cryptocurrency Symbol
-            </Typography>
-            {/* <h1>{searchInput}</h1> */}
-            <Box
-                sx={{
-                    display: "flex",
-                    alignContent: "center",
-                    justifyContent: "center",
-                }}
-            >
-                <Autocomplete
-                    sx={{ width: 900, display: "inline-block" }}
-                    id="currency-search"
-                    freeSolo
-                    options={CryptoList}
-                    onInputChange={(event, value) => {
-                        handleSearchInputChange(value);
-                    }}
-                    renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            label="Search Cryptocurrency"
-                            value={searchInput}
-                            onKeyDown={keyPress}
-                        />
-                    )}
-                />
-                <IconButton
-                    onClick={handleSearchButtonClick}
-                    sx={{
-                        borderStyle: "solid",
-                        borderBlockColor: "black",
-                        display: "inline-block",
-                    }}
-                >
-                    <SvgIcon
-                        component={SearchIcon}
-                        sx={{ width: 50, height: 40 }}
-                    />
-                </IconButton>
-            </Box>
+          <Autocomplete
+            sx={{ width: 900, display: 'inline-block' }}
+            id='currency-search'
+            freeSolo
+            options={suggestList}
+            onInputChange={(event, value) => {
+              handleSearchInputChange(value);
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label='Search Cryptocurrency'
+                value={searchInput}
+                onKeyDown={keyPress}
+              />
+            )}
+          />
+          <IconButton
+            onClick={handleSearchButtonClick}
+            sx={{
+              borderStyle: 'solid',
+              borderBlockColor: 'black',
+              display: 'inline-block',
+            }}
+          >
+            <SvgIcon component={SearchIcon} sx={{ width: 50, height: 40 }} />
+          </IconButton>
         </Box>
+      </Box>
     );
 };
 

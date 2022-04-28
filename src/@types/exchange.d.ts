@@ -1,6 +1,9 @@
+import { IPriceData } from "./priceCard";
+
 export interface IExchange {
     name: string;
     isSelect: boolean;
+    data?: IPriceData | null;
 }
 
 export type ExchangeContextType = {
