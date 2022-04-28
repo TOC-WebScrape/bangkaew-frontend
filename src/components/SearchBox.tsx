@@ -39,7 +39,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
         // fetchSuggest();
         if (e.key === "Enter") {
             //setSearchInput(e.target.value);
-            console.log(searchInput);
             exchangeService.currency(searchInput).then((result) => {
                 console.log(result.data.bn);
             });
@@ -54,7 +53,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
      * SearchPage component.
      */
     const handleSearchButtonClick = (e: any) => {
-        console.log(searchInput);
         fetchPrice(searchInput);
     };
 
@@ -68,7 +66,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
      */
     const fetchSuggest = () => {
         exchangeService.suggest().then((result) => {
-            console.log(result.data.result);
             setSuggestList(result.data.result);
         });
     };
