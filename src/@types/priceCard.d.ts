@@ -8,6 +8,12 @@ export interface IPriceCard {
   rateStatus: boolean;
 }
 
+export interface IPriceExchange {
+  name:string;
+  imageUrl: string;
+  coins:[];
+}
+
 export interface IPriceData {
   name: string;
   price: string;

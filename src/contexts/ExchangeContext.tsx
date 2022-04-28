@@ -22,20 +22,24 @@ export const ExchangeContext = createContext<ExchangeContextType | null>(null);
 
 const InitExchange: IExchange[] = [
   {
-    name: "Binance",
+    name: 'Binance',
     isSelect: true,
+    data: null,
   },
   {
-    name: "Gateio",
+    name: 'Gateio',
     isSelect: true,
+    data: null,
   },
   {
-    name: "Kucoin",
+    name: 'Kucoin',
     isSelect: true,
+    data: null,
   },
   {
-    name: "BitMart",
+    name: 'BitMart',
     isSelect: true,
+    data: null,
   },
 ];
 
@@ -52,21 +56,31 @@ export const ExchangeProvider: React.FC<React.ReactNode> = ({ children }) => {
   const fetchPrice = (name: string) => {
     exchangeService.currency(name).then((res: any) => {
       console.log(res.data);
+      const newData = exchanges
 
       const biFormatter: AbstractFormatter = new BinanceFormatter(
         res.data["bn"]
       );
       console.log(biFormatter.getFormattedData());
+      newData[0].data = biFormatter.getFormattedData();
+
       const bmFormatter: AbstractFormatter = new BitMartFormatter(
         res.data["bm"]
       );
       console.log(bmFormatter.getFormattedData());
+      newData[3].data = bmFormatter.getFormattedData();
+
       const gaFormatter: AbstractFormatter = new GateIoFormatter(res.data["g"]);
       console.log(gaFormatter.getFormattedData());
+      newData[1].data = gaFormatter.getFormattedData();
+
       const kuFormatter: AbstractFormatter = new KuCoinFormatter(
         res.data["kc"]
       );
       console.log(kuFormatter.getFormattedData());
+      newData[2].data = kuFormatter.getFormattedData();
+
+      setExchanges([...newData]);
     });
   };
 

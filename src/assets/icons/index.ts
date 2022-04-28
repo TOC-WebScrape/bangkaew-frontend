@@ -7,6 +7,7 @@ import ETOROX_ICON from './eToroX.png';
 import FTX_ICON from './FTX.png';
 import GATEIO_ICON from './Gateio.png';
 import KUCOIN_ICON from './Kucoin.png';
+import BITMART_ICON from './BitMart.png'
 
 //New Trading coins icons
 import ADA_ICON from './ADA.png';
@@ -20,75 +21,22 @@ import XLM_ICON from './XLM.png';
 
 const TradingIcons = [
   {
-    name: 'COINSBIT_ICON',
-    icon: COINSBIT_ICON,
-    rateStatus: true,
-  },
-  {
-    name: 'ETOROX_ICON',
-    icon: ETOROX_ICON,
-    rateStatus: true,
-  },
-  {
-    name: 'FTX_ICON',
-    icon: FTX_ICON,
-    rateStatus: true,
-  },
-  {
-    name: 'GATEIO_ICON',
+    name: 'g',
     icon: GATEIO_ICON,
-    rateStatus: true,
   },
   {
-    name: 'KUCOIN_ICON',
+    name: 'kc',
     icon: KUCOIN_ICON,
-    rateStatus: false,
   },
   {
-    name: 'BITFINEX_ICON',
-    icon: BITFINEX_ICON,
-    rateStatus: false,
+    name: 'bn',
+    icon: BINANCE_ICON,
   },
   {
-    name: 'ADA_ICON',
-    icon: ADA_ICON,
-    rateStatus: true,
+    name: 'bm',
+    icon: BITMART_ICON,
   },
-  {
-    name: 'BCH_ICON',
-    icon: BCH_ICON,
-    rateStatus: false,
-  },
-  {
-    name: 'BNB_ICON',
-    icon: BNB_ICON,
-    rateStatus: true,
-  },
-  {
-    name: 'DODGE_ICON',
-    icon: DODGE_ICON,
-    rateStatus: true,
-  },
-  {
-    name: 'DOT_ICON',
-    icon: DOT_ICON,
-    rateStatus: true,
-  },
-  {
-    name: 'ETH_ICON',
-    icon: ETH_ICON,
-    rateStatus: false,
-  },
-  {
-    name: 'LTC_ICON',
-    icon: LTC_ICON,
-    rateStatus: false,
-  },
-  {
-    name: 'XLM_ICON',
-    icon: XLM_ICON,
-    rateStatus: false,
-  },
+  
 ];
 // Profile Pic
 import PHUKAO_PROFILE from './Phukao.png';
@@ -115,6 +63,7 @@ export {
     BITFINEX_ICON,
     COINBASE_ICON,
     COINSBIT_ICON,
+    BITMART_ICON,
     ETOROX_ICON,
     FTX_ICON,
     GATEIO_ICON,

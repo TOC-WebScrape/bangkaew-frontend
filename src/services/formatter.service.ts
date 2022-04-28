@@ -1,5 +1,5 @@
 import { IPriceCard } from "../@types/priceCard";
-
+import { BINANCE_ICON, BITMART_ICON, GATEIO_ICON, KUCOIN_ICON, TradingIcons } from "../assets/icons";
 /*
 export interface IPriceCard {
   imageUrl: string;
@@ -54,7 +54,7 @@ export class BinanceFormatter extends AbstractFormatter{
                 currentPrice: price[name].split(" ")[1].slice(1),
                 percentChange: change[name].slice(1, change[name].length-1),
                 rateStatus: change[name][0]==='+',
-                imageUrl: "string",
+                imageUrl: BINANCE_ICON,
                 highestPrice: high_low[name].split('/')[0].replace(/\s/g, ''),
                 lowestPrice: high_low[name].split('/')[1].replace(/\s/g, ''),
                 volume: volume[name],
@@ -104,7 +104,7 @@ export class BitMartFormatter extends AbstractFormatter{
                 currentPrice: price[name].split(" ")[1],
                 percentChange: change[name].slice(change[name][0]==='-' ? 1:0, change[name].length-2),
                 rateStatus: change[name][0]!=='-',
-                imageUrl: "string",
+                imageUrl: BITMART_ICON,
                 highestPrice: high_low[name].split('/')[0],
                 lowestPrice: high_low[name].split('/')[1],
                 volume: volume[name].split(" ")[0],
@@ -150,7 +150,7 @@ export class GateIoFormatter extends AbstractFormatter{
                 currentPrice: price[name],
                 percentChange: change[name].slice(1, change[name].length-2),
                 rateStatus: change[name][0]==='+',
-                imageUrl: "string",
+                imageUrl: GATEIO_ICON,
                 highestPrice: high_low[name].split('/')[0],
                 lowestPrice: high_low[name].split('/')[1],
                 volume: volume[name],
@@ -192,7 +192,7 @@ export class KuCoinFormatter extends AbstractFormatter{
                 currentPrice: price[name],
                 percentChange: change[name].slice(1, change[name].length-1),
                 rateStatus: change[name][0]==='+',
-                imageUrl: "string",
+                imageUrl: KUCOIN_ICON,
                 highestPrice: '-',
                 lowestPrice: '-',
                 volume: volume[name],

@@ -3,7 +3,9 @@ import { Box, Paper } from "@mui/material";
 import ExchangeCard from "./ExchangeCard";
 import { EXCHANGE_CARD } from "../MockData";
 import { BINANCE_ICON, TradingIcons } from "../assets/icons";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { ExchangeContext } from '../contexts/ExchangeContext';
+import { ExchangeContextType } from '../@types/exchange';
 
 interface SearchPageProps {}
 const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
@@ -15,23 +17,27 @@ const SearchPage: React.FC<SearchPageProps> = ({}: SearchPageProps) => {
     }, 10000);
   }, []);
 
+  const { exchanges } = useContext(
+    ExchangeContext
+  ) as ExchangeContextType;
+
   return (
     <div className="flex flex-col items-center">
       <SearchBox />
       <WebSelectBar />
       <Paper className='flex flex-wrap justify-center'>
-        {TradingIcons.map(({ name, icon, rateStatus}) => {
+        {exchanges.map(({data,isSelect}) => {
+        if(data && isSelect)
         return (
           <ExchangeCard
             currentPrice={data.currentPrice}
             highestPrice={data.highestPrice}
             // imageUrl={data.imageUrl}
-            imageUrl={icon}
+            imageUrl={data.imageUrl}
             lowestPrice={data.lowestPrice}
             percentChange={data.percentChange}
             volume={data.volume}
-            key={name}
-            rateStatus={rateStatus}
+            rateStatus={data.rateStatus}
           />
         );})}
       </Paper>
