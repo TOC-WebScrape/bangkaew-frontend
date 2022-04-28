@@ -10,14 +10,17 @@ import {
 } from "@mui/material";
 import { ExchangeContext } from "../contexts/ExchangeContext";
 import { ExchangeContextType } from "../@types/exchange";
+import { ThemeContext } from "../contexts";
 import { ContactMailOutlined } from "@mui/icons-material";
 
 interface IWebSelectBar {}
 
 const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
-  const { exchanges, toggleSelect } = useContext(
+  const { exchanges, toggleSelect} = useContext(
     ExchangeContext
   ) as ExchangeContextType;
+
+  const {toggleColorMode} = useContext(ThemeContext)
 
   const websites = [
     { website: "Explore Price", route: "/search" },
@@ -77,7 +80,7 @@ const WebSelectBar: React.FC<IWebSelectBar> = ({}: IWebSelectBar) => {
                 width: 0.21,
                 maxHeight: 40,
                 m: 2,
-                backgroundColor: '#F1F1F1',
+                backgroundColor: '#b4b5af',
                 borderRadius:2,
               }}
             />

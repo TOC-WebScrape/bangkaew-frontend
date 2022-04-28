@@ -23,10 +23,10 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
         <div className='sideBox'>
           <Avatar
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              position: "relative",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'relative',
             }}
             sx={{ mb: 5, height: 150, width: 150 }}
             src={AppIcon}
@@ -148,9 +148,8 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 BeanBean<span>Engineer | Front-end</span>
               </h2>
               <p>
-                I'm looking for something that can deliver a 50-pound payload of
-                snow on a small feminine target. Can you suggest something?
-                Hello...?{" "}
+                We build our Program (website) the way we build our cities:
+                over time, without a plan, on top of ruins.{' '}
               </p>
               <a
                 href='https://github.com/teethat-lsk'
@@ -185,7 +184,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
               <p>
                 I'm looking for something that can deliver a 50-pound payload of
                 snow on a small feminine target. Can you suggest something?
-                Hello...?{" "}
+                Hello...?{' '}
               </p>
               <a
                 href='https://github.com/Poomipat-Ch'
@@ -257,7 +256,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
               </h2>
               <p>
                 I asked God for a M1 mini, but I know God doesn't work that way.
-                So I stole a M1 mini and asked for forgiveness.{" "}
+                So I stole a M1 mini and asked for forgiveness.{' '}
               </p>
               <a
                 href='https://github.com/T-Pakorn'
@@ -292,7 +291,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
               <p>
                 I'm looking for something that can deliver a 50-pound payload of
                 snow on a small feminine target. Can you suggest something?
-                Hello...?{" "}
+                Hello...?{' '}
               </p>
               <a
                 href='https://github.com/BXSS101'
@@ -327,7 +326,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
               <p>
                 I'm looking for something that can deliver a 50-pound payload of
                 snow on a small feminine target. Can you suggest something?
-                Hello...?{" "}
+                Hello...?{' '}
               </p>
               <a
                 href='https://github.com/Phukaoo08'
