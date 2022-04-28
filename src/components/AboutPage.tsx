@@ -218,7 +218,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 className='profile'
               />
               <h2>
-                iJames<span>Engineer | Front-end | Back-end</span>
+                iJames<span>Engineer | Front-end</span>
               </h2>
               <p>
                 Hello, I'm Jame.This is my blog. My favorite color is green. I
@@ -253,7 +253,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 className='profile'
               />
               <h2>
-                Treepakorn<span>Engineer | Front-end</span>
+                Treepakorn<span>Engineer | Back-end</span>
               </h2>
               <p>
                 I asked God for a M1 mini, but I know God doesn't work that way.
