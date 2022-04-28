@@ -122,7 +122,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 Github
               </a>
               <a href='#' className='info'>
-                Stu ID
+                62010318
               </a>
             </figcaption>
           </figure>
@@ -192,7 +192,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 Github
               </a>
               <a href='#' className='info'>
-                Stu ID
+                62010722
               </a>
             </figcaption>
           </figure>
@@ -252,9 +252,8 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 Treepakorn<span>Engineer | Front-end</span>
               </h2>
               <p>
-                I'm looking for something that can deliver a 50-pound payload of
-                snow on a small feminine target. Can you suggest something?
-                Hello...?{" "}
+                I asked God for a M1 mini, but I know God doesn't work that way.
+                So I stole a M1 mini and asked for forgiveness.{" "}
               </p>
               <a
                 href='https://github.com/T-Pakorn'
@@ -265,7 +264,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 Github
               </a>
               <a href='#' className='info'>
-                Stu ID
+                62010694
               </a>
             </figcaption>
           </figure>
