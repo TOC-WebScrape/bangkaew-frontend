@@ -6,4 +6,6 @@ export interface IExchange {
 export type ExchangeContextType = {
     exchanges: IExchange[];
     toggleSelect: (name: string,isSelect: boolean) => void;
+    data: [];
+    fetchPrice: (name: string) => void;
 };
