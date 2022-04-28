@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import { ClassNames } from "@emotion/react";
 import {
+  AppIcon,
   BOSS_PROFILE,
   JAME_PROFILE,
   KORN_PROFILE,
@@ -28,7 +29,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
               position: "relative",
             }}
             sx={{ mb: 5, height: 150, width: 150 }}
-            src='https://avatars.githubusercontent.com/u/63555111?v=4'
+            src={AppIcon}
           ></Avatar>
           <div className='content'>
             <h6>BANGKAEW</h6>

@@ -107,6 +107,9 @@ import bg4 from './bitcoinAna.jpg';
 import bg5 from './bitcoinTrophy.jpg';
 import { Upcoming } from '@mui/icons-material';
 
+// App Icon
+import AppIcon from './BangkaewLogo.svg';
+
 export {
     BINANCE_ICON,
     BITFINEX_ICON,
@@ -128,5 +131,6 @@ export {
     bg3,
     bg4,
     bg5,
+    AppIcon,
     TradingIcons,
 }
