@@ -14,112 +14,128 @@ import axios from "axios";
 
 interface SearchBoxProps {}
 const SearchBox: React.FC<SearchBoxProps> = ({}: SearchBoxProps) => {
-    //TODO: Validate that the crypto name is in suggestionCurrency before submit
-    const [searchInput, setSearchInput] = React.useState("");
-    const [suggestList, setSuggestList] = React.useState([]);
+  const [searchInput, setSearchInput] = React.useState<string>("");
 
-    React.useEffect(() =>{
-        fetchSuggest();
-    },[])
+  const [suggestList, setSuggestList] = React.useState<string[]>([]);
+  const { fetchPrice } = React.useContext(
+    ExchangeContext
+  ) as ExchangeContextType;
 
+  const [intervalId, setIntervalId] = React.useState<number>(0);
 
-    const { fetchPrice } = React.useContext(
-        ExchangeContext
-    ) as ExchangeContextType;
+  React.useEffect(() => {
+    fetchSuggest();
+  }, []);
 
-    const handleSearchInputChange = (value: string) => {
-        setSearchInput(value);
-    };
+  React.useEffect(() => {
+    console.log("interval changed", intervalId);
 
-    /**
-     * @dev keyPress will call fetchSuggest every key strokes.
-     */
-    const keyPress = (e: any) => {
-        console.log(e.target.value);
-        // fetchSuggest();
-        if (e.key === "Enter") {
-            //setSearchInput(e.target.value);
-            exchangeService.currency(searchInput).then((result) => {
-                console.log(result.data.bn);
-            });
-            
-            //TODO: GET data from backend: api/crypto/{name}?cex=bi,ga,ku,bi
-            //TODO: If all cex is not selected, alert the user (don't fetch)
+    return () => clearInterval(intervalId);
+  }, [intervalId]);
+
+  const handleSearchInputChange = (value: string) => {
+    setSearchInput(value);
+  };
+
+  /**
+   * @dev keyPress will call fetchSuggest every key strokes.
+   */
+  const keyPress = (e: any) => {
+    console.log(e.target.value);
+    // fetchSuggest();
+    if (e.key === "Enter") {
+      //setSearchInput(e.target.value);
+      exchangeService.currency(searchInput).then((result) => {
+        console.log(result.data.bn);
+      });
+    }
+  };
+
+  /**
+   * @dev handelSearchButton is update data on Exchange context for show in
+   * SearchPage component.
+   */
+  const handleSearchButtonClick = (e: any) => {
+    fetchPrice(searchInput);
+
+    clearInterval(intervalId);
+    setIntervalId(
+      setInterval(() => {
+        if (
+          suggestList.filter(
+            (suggestion: String) =>
+              suggestion.toLowerCase() == searchInput.toLowerCase()
+          ).length > 0
+        ) {
+          console.log("fetching");
+          fetchPrice(searchInput);
         }
-    };
+      }, 12000)
+    );
+  };
 
-    /**
-     * @dev handelSearchButton is update data on Exchange context for show in
-     * SearchPage component.
-     */
-    const handleSearchButtonClick = (e: any) => {
-        fetchPrice(searchInput);
-    };
+  /**
+   * @dev fetchSuggest will fetch suggest data from backend and
+   * update to suggestList state for update Autocomplete {option} component
+   *
+   * But now! option can't update with state.
+   */
+  const fetchSuggest = () => {
+    exchangeService.suggest().then((result) => {
+      setSuggestList(result.data.result);
+    });
+  };
 
-    //TODO: Fetch from backend (or hard-coded): fetch suggestion from backend when string change (/api/suggest)
-
-    /**
-     * @dev fetchSuggest will fetch suggest data from backend and
-     * update to suggestList state for update Autocomplete {option} component
-     *
-     * But now! option can't update with state.
-     */
-    const fetchSuggest = () => {
-        exchangeService.suggest().then((result) => {
-            setSuggestList(result.data.result);
-        });
-    };
-
-    return (
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Typography sx={{ py: 2, fontSize: 50, fontWeight: "bold" }}>
+        Cryptocurrency Symbol
+      </Typography>
+      {/* <h1>{searchInput}</h1> */}
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: "flex",
+          alignContent: "center",
+          justifyContent: "center",
         }}
       >
-        <Typography sx={{ py: 2, fontSize: 50, fontWeight: 'bold' }}>
-          Cryptocurrency Symbol
-        </Typography>
-        {/* <h1>{searchInput}</h1> */}
-        <Box
+        <Autocomplete
+          sx={{ width: 900, display: "inline-block" }}
+          id='currency-search'
+          freeSolo
+          options={suggestList}
+          onInputChange={(event, value) => {
+            handleSearchInputChange(value);
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label='Search Cryptocurrency'
+              value={searchInput}
+              onKeyDown={keyPress}
+            />
+          )}
+        />
+        <IconButton
+          onClick={handleSearchButtonClick}
           sx={{
-            display: 'flex',
-            alignContent: 'center',
-            justifyContent: 'center',
+            borderStyle: "solid",
+            borderBlockColor: "black",
+            display: "inline-block",
           }}
         >
-          <Autocomplete
-            sx={{ width: 900, display: 'inline-block' }}
-            id='currency-search'
-            freeSolo
-            options={suggestList}
-            onInputChange={(event, value) => {
-              handleSearchInputChange(value);
-            }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label='Search Cryptocurrency'
-                value={searchInput}
-                onKeyDown={keyPress}
-              />
-            )}
-          />
-          <IconButton
-            onClick={handleSearchButtonClick}
-            sx={{
-              borderStyle: 'solid',
-              borderBlockColor: 'black',
-              display: 'inline-block',
-            }}
-          >
-            <SvgIcon component={SearchIcon} sx={{ width: 50, height: 40 }} />
-          </IconButton>
-        </Box>
+          <SvgIcon component={SearchIcon} sx={{ width: 50, height: 40 }} />
+        </IconButton>
       </Box>
-    );
+    </Box>
+  );
 };
 
 export default SearchBox;

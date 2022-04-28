@@ -74,9 +74,14 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 Apextone<span>Engineer | Front-end</span>
               </h2>
               <p>
-                I'm looking for something that can deliver a 50-pound payload of
-                snow on a small feminine target. Can you suggest something?
-                Hello...?{' '}
+                &gt;be me
+                <br />
+                &gt;front-end developer
+                <br />
+                &gt;do this work in like 4 days
+                <br />
+                &gt;mfw it's done
+                <br />
               </p>
               <a
                 href='https://github.com/ApexTone'
@@ -109,9 +114,8 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 PhoomBeer<span>Engineer | Back-end</span>
               </h2>
               <p>
-                I'm looking for something that can deliver a 50-pound payload of
-                snow on a small feminine target. Can you suggest something?
-                Hello...?{' '}
+                good artists copy. great artists steal. Greatest artist copy,
+                then paste.{" "}
               </p>
               <a
                 href='https://github.com/GoldF15h'
@@ -216,9 +220,9 @@ const AboutPage: React.FC<AboutPageProps> = ({}: AboutPageProps) => {
                 iJames<span>Engineer | Front-end | Back-end</span>
               </h2>
               <p>
-                I'm looking for something that can deliver a 50-pound payload of
-                snow on a small feminine target. Can you suggest something?
-                Hello...?{' '}
+                Hello, I'm Jame.This is my blog. My favorite color is green. I
+                like to watch tv-series and listen music. Now I'm interested in
+                blockchain technology{" "}
               </p>
               <a
                 href='https://github.com/j4m3ee'
