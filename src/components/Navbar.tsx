@@ -35,11 +35,11 @@ const Navbar: React.FC<NavbarProps> = ({}: NavbarProps) => {
   return (
     <AppBar sx={{ position: "sticky", mb: 0 }}>
       <Toolbar sx={{}}>
-        <Link to='/' className='grow flex flex-row items-center'>
-          <Avatar
-            sx={{ mr: 2, height: 55, width: 55 }}
-            src={AppIcon}
-          ></Avatar>
+        <Link
+          to='/bangkaew-frontend'
+          className='grow flex flex-row items-center'
+        >
+          <Avatar sx={{ mr: 2, height: 55, width: 55 }} src={AppIcon}></Avatar>
           <Typography sx={{ color: "white", flexGrow: 1 }} variant='h6'>
             Bangkaew
           </Typography>
