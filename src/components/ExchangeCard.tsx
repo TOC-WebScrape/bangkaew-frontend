@@ -25,7 +25,7 @@ const ExchangeCard: React.FC<IPriceCard> = ({
   highestPrice,
   lowestPrice,
   volume,
-  rateStatus,
+  rateStatus
 }: IPriceCard) => {
   // return (
   //   <div className='flex items-center justify-between w-96 h-20 border-solid border-red-500 bg-red p-2.5'>
@@ -46,7 +46,6 @@ const ExchangeCard: React.FC<IPriceCard> = ({
 
   // Bean's card
   return (
-    <Card>
       <Card
         sx={{
           display: 'flex',
@@ -163,7 +162,6 @@ const ExchangeCard: React.FC<IPriceCard> = ({
           </Typography>
         </Stack>
       </Card>
-    </Card>
   );
 };
 
